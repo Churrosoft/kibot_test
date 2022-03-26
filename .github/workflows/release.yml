@@ -59,6 +59,8 @@ jobs:
           sudo apt update --yes
           sudo apt install kicad --yes
 
+      - name: Get 3D file location
+        run: sudo find / -name Fuse_0805_2012Metric.wrl
       # Get the version of the GitHub release for use later. This is only valid
       # when run in a release context
       - name: Get GitHub release version
@@ -125,6 +127,14 @@ jobs:
           include: ".*.kicad_pcb"
           find: "%%date%%"
           replace: '"${{ steps.date.outputs.date }}"'
+
+      - name: Set env vars
+        run: |
+          sudo cp ./kicad_common.json /github/home/.config/kicad/6.0/kicad_common.json
+          export KICAD6_3DMODEL_DIR="/usr/share/kicad/3dmodels/"
+          export KICAD6_FOOTPRINT_DIR="/usr/share/kicad/footprints/"
+          export KICAD6_SYMBOL_DIR="/usr/share/kicad/symbols/"
+          export KICAD6_TEMPLATE_DIR="/usr/share/kicad/template/"
 
       # Actually run KiBot to generate all the files. The KiBot script used is
       # in the .kibot/release.kibot.yaml folder.
