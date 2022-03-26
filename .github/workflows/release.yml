@@ -54,7 +54,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: pull kicad deeps
-        run:
+        run: |
           sudo add-apt-repository ppa:kicad/kicad-6.0-releases --yes
           sudo apt update --yes
           sudo apt install kicad --yes
