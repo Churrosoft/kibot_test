@@ -130,12 +130,12 @@ jobs:
 
       - name: Set env vars
         run: |
-          sudo cp ./kicad_common.json /github/home/.config/kicad/6.0/kicad_common.json
+          sudo mkdir -p /github/home/.config/kicad/6.0/ && sudo cp ./kicad_common.json /github/home/.config/kicad/6.0/kicad_common.json
           export KICAD6_3DMODEL_DIR="/usr/share/kicad/3dmodels/"
           export KICAD6_FOOTPRINT_DIR="/usr/share/kicad/footprints/"
           export KICAD6_SYMBOL_DIR="/usr/share/kicad/symbols/"
           export KICAD6_TEMPLATE_DIR="/usr/share/kicad/template/"
-
+  
       - name: Setup KiBot
         run: |
           sudo apt install curl make wget python-pip --yes
