@@ -99,7 +99,7 @@ jobs:
         with:
           config: .kibot/documentation-only.kibot.yaml
           dir: ${{ env.OutputFolder }}
-          schema: uEFI_rev3/uEFI_rev3.sch
+          schema: uEFI_rev3/uEFI_rev3.kicad_sch
           board: uEFI_rev3/uEFI_rev3.kicad_pcb
           verbose: 3
 
