@@ -138,13 +138,13 @@ jobs:
   
       - name: Setup KiBot
         run: |
-          sudo apt install curl make wget python-pip --yes
+          sudo apt install curl make wget python3-pip --yes
           curl -s https://api.github.com/repos/INTI-CMNB/kicad-git-filters/releases/latest | grep "browser_download_url.*deb" | cut -d : -f 2,3 | tr -d \" | wget -i -
           sudo apt -y install --no-install-recommends ./*.deb
           git clone https://github.com/INTI-CMNB/KiBot.git
           sudo chmod +x ./KiBot/entrypoint.sh
           cd ./KiBot
-          pip install . 
+          pip3 install . 
           cd ..
 
       # Actually run KiBot to generate all the files. The KiBot script used is
