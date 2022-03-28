@@ -64,13 +64,13 @@ jobs:
       
       - name: Build deeps
         run: |
-          sudo apt install curl make wget python3-pip python3-distutils xdotool xsltproc imagemagick xclip --yes
+          sudo apt install curl make wget python3-pip python3-distutils xdotool xsltproc imagemagick xclip xvfb --yes
 
       - name: Setup KiAuto
         run: |
           git clone https://github.com/INTI-CMNB/KiAuto.git
           cd KiAuto
-          pip3 install xvfbwrapper
+          sudo pip3 install xvfbwrapper
           sudo python3 setup.py install
           cd ..
 
@@ -88,13 +88,13 @@ jobs:
       
       - name: Setup PCBDraw
         run: |
-          pip3 install git+https://github.com/yaqwsx/PcbDraw@master
+          sudo pip3 install git+https://github.com/yaqwsx/PcbDraw@master
 
       - name: Setup KiBot
         run: |
           curl -s https://api.github.com/repos/INTI-CMNB/kicad-git-filters/releases/latest | grep "browser_download_url.*deb" | cut -d : -f 2,3 | tr -d \" | wget -i -
           sudo apt -y install --no-install-recommends ./*.deb
-          pip3 install --no-compile git+https://github.com/INTI-CMNB/KiBot.git
+          sudo pip3 install --no-compile git+https://github.com/INTI-CMNB/KiBot.git
 
       # Get the version of the GitHub release for use later. This is only valid
       # when run in a release context
