@@ -59,8 +59,8 @@ jobs:
           sudo apt update --yes
           sudo apt install kicad --yes
 
-      - name: Get 3D file location
-        run: sudo find / -name Fuse_0805_2012Metric.wrl
+      #- name: Get 3D file location
+      #  run: sudo find / -name Fuse_0805_2012Metric.wrl
       
       - name: Build deeps
         run: |
