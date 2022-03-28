@@ -64,7 +64,7 @@ jobs:
       
       - name: Build deeps
         run: |
-          sudo apt install curl make wget python3-pip python3-distutils xdotool xsltproc imagemagick xclip xvfb --yes
+          sudo apt install curl make wget python3-pip python3-distutils xdotool xsltproc imagemagick xclip xvfb inkscape --yes
           sudo apt install recordmydesktop --yes
 
       - name: Setup KiAuto
@@ -89,7 +89,7 @@ jobs:
       
       - name: Setup PCBDraw
         run: |
-          sudo pip3 install git+https://github.com/yaqwsx/PcbDraw@master
+          sudo pip3 install PcbDraw
 
       - name: Setup KiBot
         run: |
