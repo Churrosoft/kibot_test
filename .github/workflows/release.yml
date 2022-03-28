@@ -190,9 +190,9 @@ jobs:
 
       # Zip the JLCPCB files. This is a special step for JLCPCB because there are gerbers (already zipped by KiBot),
       # BOM, and position files for SMT fabrication.
-      - name: Zip JLCPCB fabrication files
-        run: zip -qq -r "../../uEFI_rev3/uEFI_rev3-JLCPCB.zip" uEFI_rev3/uEFI_rev3-JLCPCB.zip uEFI_rev3/uEFI_rev3_bom_jlc.csv uEFI_rev3/uEFI_rev3_cpl_jlc.csv
-        working-directory: ${{ env.OutputFolder }}/JLCPCB
+      #- name: Zip JLCPCB fabrication files
+      #  run: zip -qq -r "../uEFI_rev3/uEFI_rev3-JLCPCB.zip" uEFI_rev3/uEFI_rev3-JLCPCB.zip uEFI_rev3/uEFI_rev3_bom_jlc.csv uEFI_rev3/uEFI_rev3_cpl_jlc.csv
+      #  working-directory: ${{ env.OutputFolder }}/JLCPCB
 
       # Upload all the zip files to the release. Note that the PCBWay zip was automatically created by KiBot
       # since it doesn't have BOM or position files associated (like JLCPCB does) so the path to the file
