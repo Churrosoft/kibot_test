@@ -175,7 +175,7 @@ jobs:
       # in the .kibot/release.kibot.yaml folder.
       - name: Generate documentation and fabrication files
         run: |
-          kibot -b uEFI_rev3/uEFI_rev3.kicad_pcb -e uEFI_rev3/uEFI_rev3.kicad_sch -d ${{ env.OutputFolder }} -c .kibot/release.kibot.yaml
+          kibot -b uEFI_rev3/uEFI_rev3.kicad_pcb -e uEFI_rev3/uEFI_rev3.kicad_sch -d ${{ env.OutputFolder }} -c .kibot/release.kibot.yaml -vvv
 
       # Install the zip command line tool to package up the output
       - name: Install zip

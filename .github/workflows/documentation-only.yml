@@ -101,6 +101,7 @@ jobs:
           dir: ${{ env.OutputFolder }}
           schema: uEFI_rev3/uEFI_rev3.sch
           board: uEFI_rev3/uEFI_rev3.kicad_pcb
+          verbose: 3
 
       # Archive all the artifacts from output and attach to the action's results.
       - name: Archive production artifacts
