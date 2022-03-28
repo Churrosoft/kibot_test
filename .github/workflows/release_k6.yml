@@ -26,7 +26,7 @@
 
 # To use this workflow in your own repo you need to edit the environment variables in the env: section
 # below.
-name: "KiBot - Release"
+name: "KiBot - Release k6"
 
 on:
   release:
@@ -52,12 +52,6 @@ jobs:
     steps:
       # Check out the files
       - uses: actions/checkout@v2
-
-      - name: pull kicad deeps
-        run:
-          add-apt-repository ppa:kicad/kicad-6.0-releases --yes
-          apt update --yes
-          apt install kicad --yes
 
       # Get the version of the GitHub release for use later. This is only valid
       # when run in a release context
