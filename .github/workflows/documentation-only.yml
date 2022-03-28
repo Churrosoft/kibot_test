@@ -112,7 +112,7 @@ jobs:
       - name: Generate Boardview
         run: |
           git clone https://github.com/whitequark/kicad-boardview.git
-          ./kicad-boardview/pcbnew2boardview.py uEFI_rev3/uEFI_rev3.kicad_pcb KiBotOutput/uEFI_rev3.boardview.brd
+          sudo ./kicad-boardview/pcbnew2boardview.py uEFI_rev3/uEFI_rev3.kicad_pcb KiBotOutput/uEFI_rev3.boardview.brd
 
       # Archive all the artifacts from output and attach to the action's results.
       - name: Archive production artifacts
