@@ -93,11 +93,7 @@ jobs:
         run: |
           curl -s https://api.github.com/repos/INTI-CMNB/kicad-git-filters/releases/latest | grep "browser_download_url.*deb" | cut -d : -f 2,3 | tr -d \" | wget -i -
           sudo apt -y install --no-install-recommends ./*.deb
-          git clone https://github.com/INTI-CMNB/KiBot.git
-          sudo chmod +x ./KiBot/entrypoint.sh
-          cd ./KiBot
-          pip3 install . 
-          cd ..
+          pip3 install --no-compile git+https://github.com/INTI-CMNB/KiBot.git
 
       # Get the version of the GitHub release for use later. This is only valid
       # when run in a release context
@@ -178,7 +174,7 @@ jobs:
       # in the .kibot/release.kibot.yaml folder.
       - name: Generate documentation and fabrication files
         run: |
-          ./KiBot/entrypoint.sh -b uEFI_rev3/uEFI_rev3.kicad_pcb -e uEFI_rev3/uEFI_rev3.kicad_sch -d ${{ env.OutputFolder }} -c .kibot/release.kibot.yaml
+          kibot -b uEFI_rev3/uEFI_rev3.kicad_pcb -e uEFI_rev3/uEFI_rev3.kicad_sch -d ${{ env.OutputFolder }} -c .kibot/release.kibot.yaml
 
       # Install the zip command line tool to package up the output
       - name: Install zip
