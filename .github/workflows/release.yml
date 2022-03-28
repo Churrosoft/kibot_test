@@ -70,6 +70,7 @@ jobs:
         run: |
           git clone https://github.com/INTI-CMNB/KiAuto.git
           cd KiAuto
+          pip3 install xvfbwrapper
           sudo python3 setup.py install
           cd ..
 
