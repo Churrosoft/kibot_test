@@ -5,7 +5,7 @@
   (paper "A3")
 
   (title_block
-    (title "uEFI")
+    (title "uEF I")
     (date "%%date%%")
     (rev "v3-%%version%%")
     (company "Churrosoft")
