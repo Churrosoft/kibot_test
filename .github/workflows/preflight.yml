@@ -29,7 +29,7 @@ name: "KiBot - Preflight only"
 on:
   pull_request:
     paths:
-      - "*.sch"
+      - "*.kicad_sch"
       - "*.kicad_pcb"
       - ".kibot/*.kibot.yaml"
       - ".github/workflows/*.yml"
